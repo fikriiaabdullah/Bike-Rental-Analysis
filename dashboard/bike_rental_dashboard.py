@@ -7,19 +7,17 @@ import os
 sns.set(style='dark')
 
 # Load the dataset
-try:
-    all_data = pd.read_csv("dashboard/main_data.csv")
-except FileNotFoundError:
-    st.error("The file 'main_data.csv' was not found. Please ensure it is in the correct directory.")
-    all_data = None  # Set all_data to None to prevent further errors
+print("Current Directory:", os.getcwd())
+print("Files in Current Directory:", os.listdir(os.getcwd()))
 
-# Check if all_data is loaded successfully
-if all_data is not None:
-    # Convert date columns to datetime
-    all_data["dteday"] = pd.to_datetime(all_data["dteday"])
-    all_data["hr"] = pd.to_datetime(all_data["hr"], format="%H").dt.hour
+if "main_data.csv" in os.listdir(os.getcwd()):
+    all_data = pd.read_csv("main_data.csv")
 else:
-    st.stop()
+    print("main_data.csv not found")
+
+# Convert date columns to datetime
+all_data["dteday"] = pd.to_datetime(all_data["dteday"])
+all_data["hr"] = pd.to_datetime(all_data["hr"], format="%H").dt.hour
 
 # Filter and clean data
 def filter_data(start_date, end_date):
