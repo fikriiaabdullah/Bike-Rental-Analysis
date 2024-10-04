@@ -9,7 +9,7 @@ Anda bisa mengakses link (https://fikriiaabdullah-bike-rent-dashboardbike-rental
 
 ## Setup Environment - Shell/Terminal
 ```
-cd analisis-air-quality
+cd bike-rental-analysis
 pipenv install
 pipenv shell
 pip install -r requirements.txt
@@ -17,5 +17,5 @@ pip install -r requirements.txt
 ## Run steamlit app - Shell/Terminal
 ```
 cd .\dashboard\
-python -m streamlit run dashboard.py
+python -m streamlit run bike_rental_dashboard.py
 ```
