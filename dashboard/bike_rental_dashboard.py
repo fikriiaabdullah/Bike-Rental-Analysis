@@ -82,7 +82,7 @@ st.title('Bike Rentals Analysis Dashboard')
 
 # Sidebar for date range selection
 with st.sidebar:
-    st.image("analis_image.png")  
+    st.image("dashboard/analis_image.png")  
     st.header('Select Date Range')
     start_date = st.date_input('Start Date', all_data["dteday"].min())
     end_date = st.date_input('End Date', all_data["dteday"].max())
