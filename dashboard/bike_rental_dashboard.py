@@ -2,11 +2,18 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
+import os
 
 sns.set(style='dark')
 
 # Load the dataset
-all_data = pd.read_csv("main_data.csv")
+print("Current Directory:", os.getcwd())
+print("Files in Current Directory:", os.listdir(os.getcwd()))
+
+if "main_data.csv" in os.listdir(os.getcwd()):
+    all_data = pd.read_csv("main_data.csv")
+else:
+    print("main_data.csv not found")
 
 # Convert date columns to datetime
 all_data["dteday"] = pd.to_datetime(all_data["dteday"])
