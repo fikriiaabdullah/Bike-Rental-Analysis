@@ -6,7 +6,7 @@ import streamlit as st
 sns.set(style='dark')
 
 # Load the dataset
-all_data = pd.read_csv("Bike-Rental-Analysis/dashboard/main_data.csv")
+all_data = pd.read_csv("dashboard/main_data.csv")
 
 # Convert date columns to datetime
 all_data["dteday"] = pd.to_datetime(all_data["dteday"])
